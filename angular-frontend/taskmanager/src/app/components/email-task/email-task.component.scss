@@ -1,0 +1,122 @@
+button {
+  margin: 0 5px;
+}
+
+.form-control {
+  background: #f1f2f6;
+}
+
+.form-control:focus {
+  outline: none;
+  border: none;
+  border-color: 2px solid #dff9fb;
+}
+
+.card {
+  -webkit-box-shadow: 10px -2px 48px -3px rgba(0, 0, 0, 0.45);
+  -moz-box-shadow: 10px -2px 48px -3px rgba(0, 0, 0, 0.45);
+  box-shadow: 10px -2px 48px -3px rgba(0, 0, 0, 0.45);
+}
+
+
+button:disabled {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+  pointer-events: all !important;
+}
+
+
+.text-red {
+  color: #ff4757;
+}
+
+.circle1 {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #ffbe76;
+  opacity: 0.3;
+}
+
+.circle2 {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #ff7979;
+  opacity: 0.3;
+  position: absolute;
+  left: 80%;
+}
+
+.square1 {
+  width: 40px;
+  height: 40px;
+  background: #e056fd;
+  opacity: 0.3;
+  position: absolute;
+  left: 5%;
+  top: 40%;
+}
+
+.square2 {
+  width: 40px;
+  height: 40px;
+  background: #00d2d3;
+  opacity: 0.3;
+  position: absolute;
+  right: 5%;
+  top: 70%;
+}
+
+.rotate {
+  animation: rotation 2s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+/* Removes the clear button from date inputs */
+input[type="date"]::-webkit-clear-button {
+  display: none;
+}
+
+/* Removes the spin button */
+input[type="date"]::-webkit-inner-spin-button {
+  display: none;
+}
+
+/* Always display the drop down caret */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  color: #2c3e50;
+}
+
+/* A few custom styles for date inputs */
+input[type="date"] {
+  appearance: none;
+  -webkit-appearance: none;
+  color: #95a5a6;
+  font-family: "Helvetica", arial, sans-serif;
+  font-size: 18px;
+  border:1px solid #ecf0f1;
+  background:#ecf0f1;
+  padding:5px;
+  display: inline-block !important;
+  visibility: visible !important;
+  width: 100%;
+}
+
+input[type="date"], focus {
+  color: #95a5a6;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+}

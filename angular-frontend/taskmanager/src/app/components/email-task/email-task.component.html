@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="circle1"></div>
+  <div class="square1 rotate"></div>
+  <div class="square2 rotate"></div>
+  <div class="circle2"></div>
+  <div class="row">
+    <div class="col-md-6 m-auto">
+      <div class="card card-body mt-5">
+        <h2 class="text-red">Email your task</h2>
+        <small class="text-info">A task can only be emailed 3 days in advanace!</small> <br>
+        <h4>{{ taskTitle }}</h4> <br>
+        <form #emailTask="ngForm" (ngSubmit)="sendEmail()">
+          <div class="form-group">
+            <input type="text" placeholder="Your email here" required class="form-control" #receiverEmail="ngModel"
+              name="receiverEmail" [(ngModel)]="email">
+          </div>
+          <div class="form-group">
+            <input type="date" name="date" #date="ngModel" [(ngModel)]="sendingDate">
+          </div>
+          <div class="form-group">
+            <button type="button" routerLink="tracker" class="btn btn-warning">Go Back</button>
+            <button type="submit" [disabled]="!email" class="btn btn-danger">Send Email</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<simple-notifications></simple-notifications>
+<app-footer></app-footer>

@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css?family=Mansalva&display=swap');
+@import "../navbar/navbar.component.scss";
+.hero {
+  height: 100vh;
+}
+
+img {
+  width: 100%;
+  z-index: -5;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 50px;
+  color: #eb4d4b;
+  font-family: 'Mansalva', cursive;
+}
+
+.btn-container {
+  display: flex;
+}
+
+.btn {
+  background: #eb4d4b;
+  margin: 0 10px 0 0;
+  padding: 10px 30px;
+  color: #fff;
+  border-radius: 0;
+  text-transform: uppercase;
+  outline: none;
+  border: none;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background: #fff;
+    color: #eb4d4b;
+    border: 2px solid #eb4d4b;
+  }
+}
+
+.btn1 {
+  background: #fff;
+  margin: 0 0 0 10px;
+  padding: 10px 30px;
+  color: #eb4d4b;
+  border-style: solid;
+  border-color: #eb4d4b;
+  text-transform: uppercase;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background: #eb4d4b;
+    color: #fff;
+  }
+}
+
+.circle1 {
+  background: #ff7979;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  opacity: 0.3;
+  position: absolute;
+  top: 35%;
+}
+
+.circle2 {
+  background: #686de0;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  opacity: 0.3;
+  position: absolute;
+  left: 30%;
+  top: 60%;
+  z-index: -1;
+}
+
+.circle3 {
+  background: #f6e58d;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  opacity: 0.3;
+  position: relative;
+  left: 60%;
+  z-index: 5;
+}
+
+.circle4 {
+  background: #badc58;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  opacity: 0.3;
+  position: absolute;
+  left: 80%;
+  z-index: -1;
+}
+
+@media screen and (max-width: 768px) {
+  img {
+    width: 290px;
+    margin-top: -20px;
+  }
+}

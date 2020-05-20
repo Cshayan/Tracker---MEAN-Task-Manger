@@ -1,0 +1,4 @@
+{
+    "mongoURI": "mongodb+srv://CShayan:1234@login-lhbsq.mongodb.net/tracker?retryWrites=true&w=majority",
+    "tokenSecret": "hjhfjdfjhdjfkdjfhdfa55a76s57q657wqwjkqjemxmcxcmsncmx90897d89v6d8767v7d656d4v"
+}
