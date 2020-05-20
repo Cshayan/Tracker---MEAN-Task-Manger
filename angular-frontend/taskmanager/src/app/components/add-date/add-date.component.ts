@@ -15,7 +15,7 @@ export class AddDateComponent implements OnInit {
   startingDate: string;
   endingDate: string;
   priority: string;
-  priorityList: any = ["Low", "Medium", "High"];
+  priorityList: any = [{name: "Low", val: 1}, {name: "Medium", val: 2}, {name: "High", val: 3}];
 
   constructor(
     private taskService: TaskService,

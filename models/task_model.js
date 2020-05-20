@@ -30,16 +30,15 @@ const TaskSchema = new mongoose.Schema({
         default: 'No description of the task is present!'
     },
     startingDate: {
-        type: String,
+        type: Date,
         default: '',
     },
     endingDate: {
-        type: String,
+        type: Date,
         default: '',
     },
     priority: {
-        type: String,
-        default: '',
+        type: Number
     },
     label: {
         type: String,

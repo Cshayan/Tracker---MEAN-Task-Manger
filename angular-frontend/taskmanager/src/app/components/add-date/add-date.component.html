@@ -24,8 +24,8 @@
           <div class="form-group" *ngFor="let priority of priorityList">
             <div class="form-check-inline">
               <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="priorityName" value="{{priority}}"
-                  (change)="radioChangeHandler($event)">{{priority}}
+                <input type="radio" class="form-check-input" name="priorityName" value="{{priority.val}}"
+                  (change)="radioChangeHandler($event)">{{priority.name}}
               </label>
             </div>
           </div>

@@ -32,18 +32,24 @@
 
           <button class="btn btn-success add-list" routerLink="new-list">+ New
             List</button>
+
+            <p class="small mt-3"><strong>Note:- Create a list to begin with. Add specific tasks under each list 
+            you create by clicking or selecting the lists. Hover over the individual tasks to perform different operations.</strong></p>
         </div>
         <!-- Sidebar ends here -->
 
         <!-- Task list -->
         <div class="tasks-list-container">
-          <div style="display: flex; justify-content: space-between;">
+          <div class="m-3" style="display: flex; justify-content: space-between; align-items: center">
             <h3 class="text-red">Tasks</h3>
             <button class="rounded-btn" routerLink="new-task" [disabled]="disabled"><i
                 class="fas fa-plus-circle"></i></button>
           </div>
+          <br />
 
-          <br>
+          <select *ngIf="!disabled" [(ngModel)]="selectedSort" (change)="sortByAttributes()" class="form-control my-3">
+              <option *ngFor="let sort of sortList" [value]="sort.name">{{ sort.name }}</option>
+          </select>
 
           <!-- Some messages for UI -->
           <div *ngIf="!hasTask && !disabled" class="text-center">
@@ -60,16 +66,22 @@
             <div class="task-list" title="Click or tap the tasks to mark it as completed or viceversa">
               <div (click)="taskClick(task)">
                 <div class="name-label">
-                  <p>{{ task.title }}</p>
-                  <p class="text-info small lead">{{ task.label }}</p>
+                  <p><i class="fas fa-file-signature"></i> {{ task.title }}</p>
+                  <p *ngIf="task.label !== ''" class="text-info small lead"><i class="fas fa-tags"></i> {{ task.label }}</p>
+                </div>
+                <div class="text-center mb-2 small lead" 
+                [ngClass]=" { 'text-success': task.completed, 'text-warning': !task.completed } ">
+                <i class="far fa-clock"></i> 
+                {{task.completed === true ? ' Completed' : ' In Progress'}}
                 </div>
                 <div class="info-task" *ngIf="task.startingDate || task.endingDate || task.priority">
-                  <small title="Starting Date(yyyy-mm-dd)" class="text-success">{{ task.startingDate }}</small>
+                  <small title="Starting Date(yyyy-mm-dd)" class="text-success">{{ convertDateToString(task.startingDate) }}</small>
                   &nbsp;&nbsp;
                   <small>--</small> &nbsp;&nbsp;
-                  <small title="Ending Date(yyyy-mm-dd)" class="text-success">{{ task.endingDate }}</small> &nbsp;&nbsp;
+                  <small title="Ending Date(yyyy-mm-dd)" class="text-success">{{ convertDateToString(task.endingDate) }}</small> &nbsp;&nbsp;
                   <small>--</small> &nbsp;&nbsp;
-                  <small title="Priority" class="text-info">{{ task.priority }}</small>
+                  <!-- <small title="Priority" class="text-info" *ngIf="task.prioriy === "></small> -->
+                  <small title="Priority" class="text-info">{{ task.priority === 3 ? 'High' : task.priority == 2 ? 'Medium' : 'Low' }}</small>
                 </div>
               </div>
               <div class="task-btn">

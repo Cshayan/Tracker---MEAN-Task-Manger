@@ -16,12 +16,15 @@ export class TrackerViewComponent implements OnInit {
   tasks: any[];
   hasTask = false;
   disabled = true;
+  selectedSort = 'Sort By...';
+  startingDate;
+  endingDate;
+
+  sortList = [{name: 'Sort By...'}, {name: 'Sort By Priority'}, {name: 'Sort By Due Dates'}, {name: 'Sort By Labels'}]
 
   // Title of the list
   title: string;
   selectedListID: string;
-
-  priority: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -99,8 +102,6 @@ export class TrackerViewComponent implements OnInit {
       }
     });
   }
-
-  // Set label
   
 
   // Delete task function
@@ -117,6 +118,30 @@ export class TrackerViewComponent implements OnInit {
           }
         });
     }
+  }
+
+  sortByAttributes() {
+    
+    if (this.selectedSort === 'Sort By Priority') 
+       this.sort('priority');
+    else if (this.selectedSort === 'Sort By Due Dates')
+       this.sort('endingDate');
+    else if (this.selectedSort === 'Sort By Labels')
+       this.sort('label');   
+  }
+
+  // Function to sort
+  sort(attribute:string) {
+      this.tasks.sort((a, b) => {
+         if (a[attribute] > b[attribute]) return -1;
+         else if (a[attribute] < b[attribute]) return 1;
+         else return 0;
+       });
+  }
+
+  convertDateToString(date) {
+    const d = new Date(date);
+    return d.toDateString();
   }
 
   // Function to show notification
