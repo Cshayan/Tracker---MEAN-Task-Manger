@@ -57,9 +57,12 @@
           <!-- task list elements -->
           <div class="tasks" *ngFor="let task of tasks"
             [ngClass]=" { 'complete': task.completed, 'important': task.isImportant } ">
-            <div class="task-list">
+            <div class="task-list" title="Click or tap the tasks to mark it as completed or viceversa">
               <div (click)="taskClick(task)">
-                <p>{{ task.title }}</p>
+                <div class="name-label">
+                  <p>{{ task.title }}</p>
+                  <p class="text-info small lead">{{ task.label }}</p>
+                </div>
                 <div class="info-task" *ngIf="task.startingDate || task.endingDate || task.priority">
                   <small title="Starting Date(yyyy-mm-dd)" class="text-success">{{ task.startingDate }}</small>
                   &nbsp;&nbsp;
@@ -70,32 +73,15 @@
                 </div>
               </div>
               <div class="task-btn">
-                <!-- <div class="head-drop">
-                  <div class="dropdown">
-                    <button class="dropbtn"><i class="fas fa-cog rotate"></i></button>
-                    <div class="dropdown-content1" *ngIf="!disabled">
-                      <a title="Edit task" [routerLink]="['edit-task', task._id]" class="btn btn-warning"><i
-                          class="fas fa-edit"></i></a>
-                      <a title="Mark or Unmark as important task" (click)="markImportant(task)" class="btn btn-dark"><i
-                          class="fas fa-eye" style="color: #fff;"></i></a>
-                      <a title="Email task" [routerLink]="['email-task', task._id]" class="btn btn-info"><i
-                          class="fas fa-envelope-square"></i></a>
-                      <a title="Add Deadline" [routerLink]="['add-date', task._id]" class="btn btn-secondary"><i
-                          class="fas fa-calendar-week"></i></a>
-                      <a title="Add description" [routerLink]="['add-description', task._id]" class="btn btn-success"><i
-                          class="fas fa-sort-alpha-up"></i></a>
-                      <a title="Delete task" class="btn btn-danger" (click)="deleteTask(task._id)"><i
-                          class="fas fa-trash-alt" style="color: #fff;"></i></a>
-                    </div>
-                  </div>
-                </div> -->
                 <a title="Edit task" [routerLink]="['edit-task', task._id]" class="btn btn-warning"><i
                     class="fas fa-edit"></i></a>
                 <a title="Mark or Unmark as important task" (click)="markImportant(task)" class="btn btn-dark"><i
                     class="fas fa-eye" style="color: #fff;"></i></a>
-                <a title="Email task" [routerLink]="['email-task', task._id]" class="btn btn-info"><i
-                    class="fas fa-envelope-square"></i></a>
-                <a title="Add Deadline" [routerLink]="['add-date', task._id]" class="btn btn-secondary"><i
+                <!-- <a title="Email task" [routerLink]="['email-task', task._id]" class="btn btn-info"><i
+                    class="fas fa-envelope-square"></i></a> -->
+                <a title="Set label for the task" [routerLink]="['set-label', task._id]" class="btn btn-info"><i
+                    class="fas fa-eye" style="color: #fff;"></i></a>
+                <a title="Add Due Dates" [routerLink]="['add-date', task._id]" class="btn btn-secondary"><i
                     class="fas fa-calendar-week"></i></a>
                 <a title="Add description" [routerLink]="['add-description', task._id]" class="btn btn-success"><i
                     class="fas fa-sort-alpha-up"></i></a>

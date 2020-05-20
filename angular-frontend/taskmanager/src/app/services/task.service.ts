@@ -11,7 +11,7 @@ export class TaskService {
   constructor(private webRequestService: WebrequestService) {}
 
   /*
-   * POST baseURL/lists
+   * GET baseURL/lists
    */
   getList() {
     this.userID = localStorage.getItem("userID");
@@ -30,7 +30,7 @@ export class TaskService {
   }
 
   /*
-   * POST baseURL/lists/:listID/tasks
+   * GET baseURL/lists/:listID/tasks
    */
   getTasks(listID: string) {
     return this.webRequestService.getTasksData(`lists/${listID}/tasks`);
@@ -44,7 +44,7 @@ export class TaskService {
   }
 
   /*
-   * POST baseURL/lists/:listID/tasks/:taskID/complete
+   * PATCH baseURL/lists/:listID/tasks/:taskID/complete
    */
   completeTask(task: any) {
     return this.webRequestService.patchData(
@@ -56,7 +56,7 @@ export class TaskService {
   }
 
   /*
-   * POST baseURL/lists/:listID/tasks/:taskID/important
+   * PATCH baseURL/lists/:listID/tasks/:taskID/important
    */
   markAsImportant(task: any) {
     return this.webRequestService.patchData(
@@ -68,7 +68,7 @@ export class TaskService {
   }
 
   /*
-   *  POST baseURL/lists/:listID
+   *  PATCH baseURL/lists/:listID
    */
   updateList(listID: string, title: string): Observable<any> {
     this.userID = localStorage.getItem("userID");
@@ -99,7 +99,7 @@ export class TaskService {
   }
 
   /*
-   *  POST baseURL/lists/:listID/tasks/:taskID
+   *  PATCH baseURL/lists/:listID/tasks/:taskID
    */
   updateTask(taskID: string, listID: string, title: string): Observable<any> {
     return this.webRequestService.patchData(`lists/${listID}/tasks/${taskID}`, {
@@ -166,5 +166,21 @@ export class TaskService {
    */
   getDeadline(taskID: string, listID: string): Observable <any> {
     return this.webRequestService.getTasksData(`lists/${listID}/tasks/${taskID}/get-deadline`);
+  }
+
+  /*
+   * PATCH /lists/:listID/tasks/:taskID/set-label
+   */
+   setLabelTask(taskID: string, listID: string, label: string): Observable<any> {
+      return this.webRequestService.patchData(`lists/${listID}/tasks/${taskID}/set-label`, {
+      label
+    });
+  }
+
+   /*
+   * GET /lists/:listID/tasks/:taskID/get-label
+   */
+  getLabelTask(taskID: string, listID: string): Observable <any> {
+    return this.webRequestService.getTasksData(`lists/${listID}/tasks/${taskID}/get-label`);
   }
 }

@@ -349,4 +349,53 @@ router.get('/:listID/tasks/:taskID/get-deadline', async (req, res) => {
     }
 });
 
+/* PATCH /lists/:listID/tasks/:taskID/set-label
+ * Sets a label for a specific task like Personal, Work, Shopping etc.
+ */
+router.patch('/:listID/tasks/:taskID/set-label', async (req, res) => {
+      try {
+        await Task.findByIdAndUpdate({
+            _id: req.params.taskID,
+            _listID: req.params.listID
+        }, {
+            $set: {
+                label: req.body.label
+            }
+        });
+
+        res.json({
+            success: true,
+            msg: 'Label set successfully'
+        });
+    } catch (error) {
+        res.json({
+            success: false,
+            err: 'Error in setting the label of the task:- ' + error
+        });
+    }
+}); 
+
+/* GET lists/:listID/tasks/:taskID/get-label
+ * Retrives the label of the task
+ */
+router.get('/:listID/tasks/:taskID/get-label', async (req, res) => {
+    try {
+        const task = await Task.find({
+            _id: req.params.taskID,
+            _listID: req.params.listID
+        });
+    
+        res.json({
+            success: true,
+            msg: task
+        });
+    } catch (error) {
+        res.json({
+            success: false,
+            msg: 'Error in getting the deadline of the tasks' + error
+        });
+    }
+});
+
+
 module.exports = router;

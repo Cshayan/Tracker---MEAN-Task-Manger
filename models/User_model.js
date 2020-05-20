@@ -23,16 +23,6 @@ const userSchema = new mongoose.Schema({
         max: 1024,
         min: 6
     },
-    verifyToken: {
-        type: String,
-        required: true,
-        trim: true
-    },
-    verified: {
-        type: Boolean,
-        required: true,
-        default: false
-    },
     date: {
         type: Date,
         default: Date.now

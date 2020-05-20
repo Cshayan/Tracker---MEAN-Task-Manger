@@ -48,22 +48,12 @@ router.post('/register', async (req, res) => {
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(req.body.password, salt);
 
-    // Generate a random string as a verifyToken
-    const verifyToken = random();
 
     // Create the user from the response received from front-end
     const user = new User({
         name: req.body.name,
         email: req.body.email,
         password: hashedPassword,
-        verifyToken: verifyToken,
-        verified: false
-    });
-
-    // Send a mail to the user with the verifyToken
-    if (!sendEmail(user.email, user.verifyToken)) return res.json({
-        success: false,
-        err: 'Email cannot be send to the email provided!'
     });
 
     // Atlast, save the user to database
@@ -72,7 +62,7 @@ router.post('/register', async (req, res) => {
         res.json({
             success: true,
             user: user._id,
-            msg: 'Email sent! Check your inbox for verification.'
+            msg: 'Account Created. Login to your account!'
         });
     } catch (error) {
         res.json(error);
@@ -99,11 +89,6 @@ router.post('/login', async (req, res) => {
     if (!validPass) return res.json({
         success: false,
         msg: 'Password is incorrect!'
-    });
-
-    if (!user.verified) return res.json({
-        success: false,
-        msg: 'Your account needs to be verified first before logging in! Check your email to verify it.'
     });
 
     // Generate JWT
@@ -142,27 +127,27 @@ router.post('/details', async (req, res) => {
      }
 });
 
-/**** Utility Functions ****/
-function sendEmail(email, verifyToken) {
-    sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-    const msg = {
-        to: email,
-        from: 'iamshayan56@gmail.com',
-        templateId: 'd-f6e680d6ca814cdaa8ce233cc1b98159',
-        dynamic_template_data: {
-            verifyToken: verifyToken
-        },
-    };
+// /**** Utility Functions ****/
+// function sendEmail(email, verifyToken) {
+//     sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+//     const msg = {
+//         to: email,
+//         from: 'iamshayan56@gmail.com',
+//         templateId: 'd-f6e680d6ca814cdaa8ce233cc1b98159',
+//         dynamic_template_data: {
+//             verifyToken: verifyToken
+//         },
+//     };
 
-    // If email sent successfully
-    if (sgMail.send(msg)) {
-        console.log('Email sent!');
-        return true;
-    } else {
-        console.log('Email cannot be sent');
-        return false;
-    }
-}
+//     // If email sent successfully
+//     if (sgMail.send(msg)) {
+//         console.log('Email sent!');
+//         return true;
+//     } else {
+//         console.log('Email cannot be sent');
+//         return false;
+//     }
+// }
 
 
 // Export the router

@@ -25,6 +25,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { VerifyAccountComponent } from './components/verify-account/verify-account.component';
 import { AddDescriptionComponent } from './components/add-description/add-description.component';
 import { AddDateComponent } from './components/add-date/add-date.component';
+import { SetLabelComponent } from './components/set-label/set-label.component';
 
 
 
@@ -48,7 +49,8 @@ import { AddDateComponent } from './components/add-date/add-date.component';
     NotFoundComponent,
     VerifyAccountComponent,
     AddDescriptionComponent,
-    AddDateComponent
+    AddDateComponent,
+    SetLabelComponent
   ],
   imports: [
     BrowserModule,

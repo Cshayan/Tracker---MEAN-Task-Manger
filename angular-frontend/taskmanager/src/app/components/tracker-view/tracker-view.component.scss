@@ -286,6 +286,12 @@ a {
   background-color: #3e8e41;
 }
 
+.name-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 
 @media screen and (max-width: 768px) {
 

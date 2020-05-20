@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="circle1"></div>
+  <div class="square1 rotate"></div>
+  <div class="square2 rotate"></div>
+  <div class="circle2"></div>
+  <div class="row">
+    <div class="col-md-7 m-auto">
+      <div class="card card-body mt-5">
+        <h2 class="text-red">Add label to your task</h2> <br>
+        <h4 class="m-2">{{ title }}</h4>
+        <form #addDesc="ngForm" (ngSubmit)="setLabel()">
+          <div class="form-group">
+            <input type="text" placeholder="&#xf14a; eg: Personal, Work or Shopping" required class="form-control" #label="ngModel"
+              name="label" [(ngModel)]="labelType" style="font-family:Arial, FontAwesome" >
+          </div>
+          <div class="form-group">
+            <button type="button" (click)="goBack()" class="btn btn-warning">Go Back</button>
+            <button type="submit" [disabled]="!labelType || !title" class="btn btn-danger">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<simple-notifications></simple-notifications>
+<app-footer></app-footer>

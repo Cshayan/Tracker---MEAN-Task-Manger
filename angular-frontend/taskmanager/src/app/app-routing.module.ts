@@ -14,6 +14,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { VerifyAccountComponent } from './components/verify-account/verify-account.component';
 import { AddDescriptionComponent } from './components/add-description/add-description.component';
 import { AddDateComponent } from './components/add-date/add-date.component';
+import { SetLabelComponent } from './components/set-label/set-label.component'
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -36,6 +37,8 @@ const routes: Routes = [
   { path: 'trackers/:listID/add-description/:taskID/tracker', redirectTo: 'trackers/:listID' },
   { path: 'trackers/:listID/add-date/:taskID', component: AddDateComponent },
   { path: 'trackers/:listID/add-date/:taskID/tracker', redirectTo: 'trackers/:listID' },
+  { path: 'trackers/:listID/set-label/:taskID', component: SetLabelComponent },
+  { path: 'trackers/:listID/set-label/:taskID/tracker', redirectTo: 'trackers/:listID' },
   { path: '404', component: NotFoundComponent },
   { path: '**', redirectTo: '404' }
 ];

@@ -25,7 +25,6 @@
   <ul class="nav-links" [ngClass]="isNavActive ? 'nav-active': '' ">
     <li *ngIf="!authService.isLoggedIn()"><a routerLink="/login"><i class="fas fa-sign-in-alt"></i> Sign In</a></li>
     <li *ngIf="!authService.isLoggedIn()"><a routerLink="/register"><i class="fas fa-users"></i> Sign Up</a></li>
-    <li *ngIf="authService.isLoggedIn()"><a routerLink="#">Dashboard</a></li>
     <li *ngIf="authService.isLoggedIn()"><a (click)="logOutClick()"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
   </ul>
   <div class="hamburger" (click)="onBurgerClick()">

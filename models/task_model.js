@@ -40,6 +40,10 @@ const TaskSchema = new mongoose.Schema({
     priority: {
         type: String,
         default: '',
+    },
+    label: {
+        type: String,
+        default: ''
     }
 });
 

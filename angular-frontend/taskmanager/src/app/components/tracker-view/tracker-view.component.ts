@@ -100,6 +100,9 @@ export class TrackerViewComponent implements OnInit {
     });
   }
 
+  // Set label
+  
+
   // Delete task function
   deleteTask(taskID: string) {
     if (confirm("Are you sure you want to delete the task ?")) {
