@@ -9,7 +9,7 @@ Live Demo - https://www.somewebsite.netlifyapp
 [![Made with ExpressJS !](https://img.shields.io/badge/Angular-1abc9c.svg)](https://GitHub.com/Naereen/ama)
 [![made-with-Node](https://img.shields.io/badge/NodeJS-1f425f.svg)](https://www.latex-project.org/)
 
-![Alt text](client/src/app/assets/img/ss1.png "Home UI")
+![Alt text](client/src/assets/img/ss1.png "Home UI")
 
 # Pre-Requisites
 
@@ -28,12 +28,12 @@ Live Demo - https://www.somewebsite.netlifyapp
 3. To install all server-side dependencies run -> npm install
 4. To install all client-side dependencies run -> npm install clientinstall
 5. Then to start both the server run -> npm run dev.
-   a. This will start your server at PORT 3000 and client at PORT 4200.
-   b. In any browser open http://localhost:4200 to explore the complete application.
+6. This will start your server at PORT 3000 and client at PORT 4200.
+7. In any browser open http://localhost:4200 to explore the complete application.
 
 # Key functionalities provided in this application
 
-![Alt text](client/src/app/assets/img/ss2.png "Dashboard")
+![Alt text](client/src/assets/img/ss2.png "Dashboard")
 
 1. Account registration and login for different users.
 2. Create lists and sub-tasks under each lists.
