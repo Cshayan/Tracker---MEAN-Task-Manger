@@ -23,13 +23,13 @@ Live Demo - https://www.somewebsite.netlifyapp
 
 # Run the project
 
-1. Clone the repository at https://somelink.git
+1. Clone the repository at `https://github.com/Cshayan/Tracker---MEAN-Task-Manger.git`
 2. Go to the folder cloned.
-3. To install all server-side dependencies run -> npm install
-4. To install all client-side dependencies run -> npm install clientinstall
-5. Then to start both the server run -> npm run dev.
+3. To install all server-side dependencies run -> `npm install`
+4. To install all client-side dependencies run -> `npm install clientinstall`
+5. Then to start both the server run -> `npm run dev`.
 6. This will start your server at PORT 3000 and client at PORT 4200.
-7. In any browser open http://localhost:4200 to explore the complete application.
+7. In any browser open `http://localhost:4200` to explore the complete application.
 
 # Key functionalities provided in this application
 
