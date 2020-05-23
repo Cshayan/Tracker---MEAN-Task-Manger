@@ -1,0 +1,42 @@
+<div class="container mt-4">
+  <div class="circle1"></div>
+  <div class="square1 rotate"></div>
+  <div class="square2 rotate"></div>
+  <div class="circle2"></div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="text-center pt-5 hero-text">
+        <h1><i class="fab fa-servicestack"></i> Tracker</h1>
+        <p class="lead">Create, manage and track your tasks at ease!</p>
+      </div>
+    </div>
+    <div class="register-container col-md-6">
+      <div class="card card-body">
+        <h2 class="text-red"><i class="fab fa-servicestack"></i> Sign Up</h2>
+        <small class="m-2">Create your free account now!</small>
+        <br>
+        <form #registerForm="ngForm" (ngSubmit)="onRegisterClick()">
+          <div class="form-group">
+            <input type="text" name="name" #name="ngModel" class="form-control" placeholder="&#xf007; Full name here"
+              required [(ngModel)]="nameForm" style="font-family:Arial, FontAwesome">
+          </div>
+          <div class="form-group">
+            <input type="text" name="email" #email="ngModel" class="form-control" placeholder="&#xf0e0; Email here"
+              required [(ngModel)]="emailForm" style="font-family:Arial, FontAwesome">
+          </div>
+          <div class="form-group">
+            <input type="password" name="password" #password="ngModel" class="form-control"
+              placeholder="&#xf13e; Password here" required [(ngModel)]="passwordForm"
+              style="font-family:Arial, FontAwesome">
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn" [disabled]="!(emailForm && passwordForm && nameForm) || disable">Sign
+              Up</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<simple-notifications></simple-notifications>
+<app-footer></app-footer>

@@ -1,18 +1,21 @@
 {
   "name": "task_manager_mean_app",
   "version": "1.0.0",
-  "description": "TaskManager-Tracker",
+  "description": "TaskManager-Tracker-Backend-REST-API",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "clientinstall": "npm install --prefix client",
+    "start": "node index.js",
+    "server": "nodemon index.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server \" \"npm run client \""
   },
   "author": "Shayan Chatterjee",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@hapi/joi": "^16.1.5",
     "@sendgrid/mail": "^6.4.0",
     "bcryptjs": "^2.4.3",
-    "body-parser": "^1.19.0",
     "config": "^3.2.2",
     "cors": "^2.8.5",
     "dotenv": "^8.1.0",
@@ -23,6 +26,7 @@
     "random-string-generator": "^1.0.0"
   },
   "devDependencies": {
+    "concurrently": "^5.2.0",
     "nodemon": "^1.19.2"
   }
 }

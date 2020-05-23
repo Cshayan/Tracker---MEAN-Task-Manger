@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="circle1"></div>
+  <div class="square1 rotate"></div>
+  <div class="square2 rotate"></div>
+  <div class="circle2"></div>
+  <div class="row">
+    <div class="col-md-6 m-auto">
+      <div class="card card-body mt-5">
+        <h2 class="text-red">Create a new task</h2>
+        <form #createList="ngForm" (ngSubmit)="createNewTask()">
+          <div class="form-group">
+            <input type="text" placeholder="&#xf14a; eg: Learn Flutter" required class="form-control"
+              #listName="ngModel" name="listName" [(ngModel)]="title" style="font-family:Arial, FontAwesome">
+          </div>
+          <div class="form-group">
+            <button type="button" routerLink="../" class="btn btn-light">Go Back</button>
+            <button type="submit" [disabled]="!title || disable" class="btn btn-danger">Create</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<simple-notifications></simple-notifications>
+<app-footer></app-footer>

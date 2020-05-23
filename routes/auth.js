@@ -7,9 +7,8 @@ const router = require('express').Router();
 const Joi = require('@hapi/joi');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const config = require('config');
 var random = require('random-string-generator');
-const sgMail = require('@sendgrid/mail');
+// const sgMail = require('@sendgrid/mail');
 require('dotenv').config();
 
 
@@ -94,7 +93,7 @@ router.post('/login', async (req, res) => {
     // Generate JWT
     const token = jwt.sign({
         _id: user._id
-    }, config.get('tokenSecret'));
+    }, process.env.TOKEN_SECRET);
     res.header('auth-token', token);
 
     // Here send back the JSONWebToken as user has successfully logged in
@@ -110,21 +109,21 @@ router.post('/login', async (req, res) => {
  * Retrieves details about a specific user 
  */
 router.post('/details', async (req, res) => {
-     try {
+    try {
         const user = await User.findOne({
             _id: req.body.userID
-        });        
-         res.json({
-             success: true,
-             name: user.name,
-             email: user.email
-         });
-     } catch (error) {
-         res.json({
-             success: false,
-             err: error
-         });         
-     }
+        });
+        res.json({
+            success: true,
+            name: user.name,
+            email: user.email
+        });
+    } catch (error) {
+        res.json({
+            success: false,
+            err: error
+        });
+    }
 });
 
 // /**** Utility Functions ****/

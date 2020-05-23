@@ -1,5 +1,5 @@
 /* 
- * Model for MongoDB database
+ * Model for MongoDB database - For List
  */
 
 // All Dependencies

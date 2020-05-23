@@ -1,5 +1,5 @@
 /* 
- * Model for MongoDB database
+ * Model for MongoDB database - For Task
  */
 
 // All Dependencies
@@ -23,7 +23,7 @@ const TaskSchema = new mongoose.Schema({
     isImportant: {
         type: Boolean,
         default: false
-    }, 
+    },
     description: {
         type: String,
         required: true,
