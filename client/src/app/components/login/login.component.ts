@@ -25,7 +25,12 @@ export class LoginComponent implements OnInit {
     this.disable = false;
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    const token = localStorage.getItem("token");
+    if (token) {
+      this.router.navigate(["/tracker"]);
+    }
+  }
 
   // When login button is clicked, call it
   onLoginClick() {

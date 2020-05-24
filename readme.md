@@ -19,14 +19,14 @@ Live Demo - https://www.somewebsite.netlifyapp
 # Basic steps to follow
 
 1.  Go to https://www.nodejs.org if you don't have NodeJS installed in your system.
-2.  To install Angular CLI globally run -> npm install -g @angular/cli
+2.  To install Angular CLI globally run -> `npm install -g @angular/cli`
 
 # Run the project
 
 1. Clone the repository at `https://github.com/Cshayan/Tracker---MEAN-Task-Manger.git`
 2. Go to the folder cloned.
 3. To install all server-side dependencies run -> `npm install`
-4. To install all client-side dependencies run -> `npm install clientinstall`
+4. To install all client-side dependencies run -> `npm run clientinstall`
 5. Then to start both the server run -> `npm run dev`.
 6. This will start your server at PORT 3000 and client at PORT 4200.
 7. In any browser open `http://localhost:4200` to explore the complete application.

@@ -10,15 +10,19 @@ import { NotificationsService } from "angular2-notifications";
 })
 export class NavbarComponent implements OnInit {
   isNavActive: boolean = false;
+  userName;
 
   constructor(
     private authService: AuthService,
     private router: Router,
-    private notifier: NotificationsService,
-    private route: ActivatedRoute
+    private notifier: NotificationsService
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.authService.userDetails().subscribe((response) => {
+      this.userName = response.name;
+    });
+  }
 
   logOutClick() {
     this.authService.logOut();
@@ -35,7 +39,6 @@ export class NavbarComponent implements OnInit {
   }
 
   onBurgerClick() {
-    console.log("here");
     this.isNavActive = !this.isNavActive;
   }
 }

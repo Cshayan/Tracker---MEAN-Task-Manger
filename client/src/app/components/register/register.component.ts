@@ -26,7 +26,12 @@ export class RegisterComponent implements OnInit {
     this.titleService.setTitle("Tracker | Register for new account");
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    const token = localStorage.getItem("token");
+    if (token) {
+      this.router.navigate(["/tracker"]);
+    }
+  }
 
   // When register button is clicked
   onRegisterClick() {
