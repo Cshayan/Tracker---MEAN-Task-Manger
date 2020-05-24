@@ -1,15 +1,15 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { Observable } from 'rxjs';
+import { Observable } from "rxjs";
 
 @Injectable({
-  providedIn: "root"
+  providedIn: "root",
 })
 export class WebrequestService {
   baseURL: string;
 
   constructor(private http: HttpClient) {
-    this.baseURL = "http://localhost:3000";
+    this.baseURL = "https://tracker-api-shayan.herokuapp.com";
   }
 
   getListsData(url: string, userID: string) {
@@ -35,5 +35,4 @@ export class WebrequestService {
   deleteTaskData(url: string) {
     return this.http.delete(`${this.baseURL}/${url}`);
   }
-
 }

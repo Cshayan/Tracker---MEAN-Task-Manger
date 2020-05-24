@@ -7,7 +7,7 @@ import { WebrequestService } from "./webrequest.service";
   providedIn: "root",
 })
 export class AuthService {
-  baseURL: string = "http://localhost:3000";
+  baseURL: string = "https://tracker-api-shayan.herokuapp.com";
   userID: string;
 
   constructor(
