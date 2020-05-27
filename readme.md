@@ -10,7 +10,6 @@ Live Demo - https://tracker-site.netlify.app
 [![made-with-Node](https://img.shields.io/badge/NodeJS-1f425f.svg)](https://www.latex-project.org/)
 
 ![Alt text](client/src/assets/img/ss1.png "Home UI")
-
 # Pre-Requisites
 
 1.  Must have NodeJS installed in the system.
