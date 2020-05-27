@@ -25,11 +25,24 @@ Live Demo - https://tracker-site.netlify.app
 
 1. Clone the repository at `https://github.com/Cshayan/Tracker---MEAN-Task-Manger.git`
 2. Go to the folder cloned.
-3. To install all server-side dependencies run -> `npm install`
-4. To install all client-side dependencies run -> `npm run clientinstall`
-5. Then to start both the server run -> `npm run dev`.
-6. This will start your server at PORT 3000 and client at PORT 4200.
-7. In any browser open `http://localhost:4200` to explore the complete application.
+
+# Setup the environment variables
+
+1. In the folder called config, create a file called `config.env`.
+2. In that file `config.env`, set your own MONGO_URI. It is the link which connects with backend application with cloud MongoDB Atlas. Remeber to set your own password in the MONGO_URI.
+3. Also set TOKEN_SECRET to some random string containing some combination of alphabets and numbers.
+4. In the end, your `config.env` file should look like this -
+   `MONGO_URI = YOUR_OWN_URI`
+   `TOKEN_SECRET = SOME_RANDOM_STRING_AlPHANUMERIC_CHAR`
+   ![Alt text](client/src/assets/img/ss3.png "config.env")
+
+# Start the application
+
+1. In the root folder, to install all server-side dependencies run -> `npm install`
+2. In the same root folder, to install all client-side dependencies run -> `npm run clientinstall`
+3. In the same folder as the previous step, start both the server by running -> `npm run dev`.
+4. This will start your server at PORT 3000 and client at PORT 4200.
+5. In any browser open `http://localhost:4200` to explore the complete application.
 
 # Key functionalities provided in this application
 
