@@ -2,7 +2,7 @@
 
 Application to track and manage all your daily tasks, todos effortlessly.
 
-Live Demo - https://www.somewebsite.netlifyapp
+Live Demo - https://tracker-site.netlify.app
 
 [![Supprted by MongoDB](https://img.shields.io/badge/MongoDB-1f425f.svg)](https://www.latex-project.org/)
 [![Made with Express !](https://img.shields.io/badge/Express-1abc9c.svg)](https://GitHub.com/Naereen/ama)

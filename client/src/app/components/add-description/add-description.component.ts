@@ -65,7 +65,7 @@ export class AddDescriptionComponent implements OnInit {
   }
 
   // On content of description change
-  onChange() {
+  onChange($event) {
     this.isSaved = false;
   }
 
