@@ -10,6 +10,7 @@ Live Demo - https://tracker-site.netlify.app
 [![made-with-Node](https://img.shields.io/badge/NodeJS-1f425f.svg)](https://www.latex-project.org/)
 
 ![Alt text](client/src/assets/img/ss1.png "Home UI")
+
 # Pre-Requisites
 
 1.  Must have NodeJS installed in the system.
@@ -27,10 +28,9 @@ Live Demo - https://tracker-site.netlify.app
 
 # Setup the environment variables
 
-1. In the folder called config, create a file called `config.env`.
-2. In that file `config.env`, set your own MONGO_URI. It is the link which connects with backend application with cloud MongoDB Atlas. Remeber to set your own password in the MONGO_URI.
-3. Also set TOKEN_SECRET to some random string containing some combination of alphabets and numbers.
-4. In the end, your `config.env` file should look like this -
+1. Inside the folder `config`, in the file called `config.env`, set your own MONGO_URI. It is the link which connects with backend application with cloud MongoDB Atlas. Remeber to set your own password in the MONGO_URI.
+2. Also set TOKEN_SECRET to some random string containing some combination of alphabets and numbers.
+3. In the end, your `config.env` file should look like this -
    `MONGO_URI = YOUR_OWN_URI`
    `TOKEN_SECRET = SOME_RANDOM_STRING_AlPHANUMERIC_CHAR`
    ![Alt text](client/src/assets/img/ss3.png "config.env")
